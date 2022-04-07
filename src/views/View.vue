@@ -51,10 +51,10 @@ export default {
       // set jsonURL (fallback: ubiq)
       this.jsonUrl = this.$store.state.apis[this.apiId]
         ? this.$store.state.apis[this.apiId].info.json
-        : this.$store.state.apis.ubiq.info.json;
+        : this.$store.state.apis.chain.info.json;
       this.endpoint = this.$store.state.apis[this.apiId]
         ? this.$store.state.apis[this.apiId].info.url
-        : this.$store.state.apis.ubiq.info.url;
+        : this.$store.state.apis.chain.info.url;
       this.discover();
     },
     discover() {

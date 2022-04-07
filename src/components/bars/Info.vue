@@ -54,7 +54,7 @@ export default {
           data: {
             id: 1,
             jsonrpc: "2.0",
-            method: "web3_clientVersion",
+            method: "chain.id",
             params: []
           }
         })

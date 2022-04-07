@@ -172,12 +172,8 @@ export default {
       if (this.editMode) {
         return this.$store.state.apis;
       } else {
-        // return apis without 'custom'
-        // TODO : do this better
-        return {
-          ubiq: this.$store.state.apis.ubiq,
-          etc: this.$store.state.apis.etc
-        };
+         //TODO return apis without 'custom'
+         return this.$store.state.apis
       }
     },
     apiId() {

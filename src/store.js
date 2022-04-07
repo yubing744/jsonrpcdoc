@@ -23,7 +23,7 @@ function newEmptyApiSchema() {
 
 export default new Vuex.Store({
   state: {
-    apiId: "custom", // selected apiId (ubiq, etc, custom)
+    apiId: "chain", // selected apiId (ubiq, etc, custom)
     clientVer: false,
     drawers: {
       left: true,
@@ -36,28 +36,88 @@ export default new Vuex.Store({
     },
     errors: [],
     apis: {
-      ubiq: {
+      // ubiq: {
+      //   openrpc: newEmptyApiSchema(),
+      //   info: {
+      //     to: "/ubiq",
+      //     icon: "apis/ubiq.svg",
+      //     json:
+      //       "https://raw.githubusercontent.com/ubiq/ubiq-json-rpc-specification/master/openrpc.json",
+      //     title: "Ubiq",
+      //     desc: "Ubiq mainnet",
+      //     url: "https://rpc.octano.dev"
+      //   }
+      // },
+      chain: {
         openrpc: newEmptyApiSchema(),
         info: {
-          to: "/ubiq",
-          icon: "apis/ubiq.svg",
+          to: "/chain",
+          icon: "apis/stc.svg",
           json:
-            "https://raw.githubusercontent.com/ubiq/ubiq-json-rpc-specification/master/openrpc.json",
-          title: "Ubiq",
-          desc: "Ubiq mainnet",
-          url: "https://rpc.octano.dev"
+            "https://raw.githubusercontent.com/starcoinorg/starcoin/master/rpc/generated_rpc_schema/chain.json",
+          title: "Starcoin Chain API",
+          desc: "Starcoin Chain API Documents",
+          url: "https://main-seed.starcoin.org"
         }
       },
-      etc: {
+      contract_api: {
         openrpc: newEmptyApiSchema(),
         info: {
-          to: "/etc",
-          icon: "apis/etc.svg",
+          to: "/contract_api",
+          icon: "apis/stc.svg",
           json:
-            "https://raw.githubusercontent.com/etclabscore/ethereum-json-rpc-specification/master/openrpc.json",
-          title: "Ethereum Classic",
-          desc: "ETC mainnet",
-          url: "https://etc-geth.0xinfra.com"
+            "https://raw.githubusercontent.com/starcoinorg/starcoin/master/rpc/generated_rpc_schema/contract_api.json",
+          title: "Starcoin Contract API",
+          desc: "Starcoin Contract API Documents",
+          url: "https://main-seed.starcoin.org"
+        }
+      },
+      state: {
+        openrpc: newEmptyApiSchema(),
+        info: {
+          to: "/state",
+          icon: "apis/stc.svg",
+          json:
+            "https://raw.githubusercontent.com/starcoinorg/starcoin/master/rpc/generated_rpc_schema/state.json",
+          title: "Starcoin State API",
+          desc: "Starcoin State API Documents",
+          url: "https://main-seed.starcoin.org"
+        }
+      },
+      txpool: {
+        openrpc: newEmptyApiSchema(),
+        info: {
+          to: "/txpool",
+          icon: "apis/stc.svg",
+          json:
+            "https://raw.githubusercontent.com/starcoinorg/starcoin/master/rpc/generated_rpc_schema/txpool.json",
+          title: "Starcoin Txpool API",
+          desc: "Starcoin Txpool API Documents",
+          url: "https://main-seed.starcoin.org"
+        }
+      },
+      node: {
+        openrpc: newEmptyApiSchema(),
+        info: {
+          to: "/node",
+          icon: "apis/stc.svg",
+          json:
+            "https://raw.githubusercontent.com/starcoinorg/starcoin/master/rpc/generated_rpc_schema/node.json",
+          title: "Starcoin Node API",
+          desc: "Starcoin Node API Documents",
+          url: "https://main-seed.starcoin.org"
+        }
+      },
+      account: {
+        openrpc: newEmptyApiSchema(),
+        info: {
+          to: "/account",
+          icon: "apis/stc.svg",
+          json:
+            "https://raw.githubusercontent.com/starcoinorg/starcoin/master/rpc/generated_rpc_schema/account.json",
+          title: "Starcoin Account API",
+          desc: "Starcoin Account API Documents",
+          url: "https://main-seed.starcoin.org"
         }
       },
       custom: {
@@ -138,7 +198,7 @@ export default new Vuex.Store({
       state.drawers[side] = !state.drawers[side];
     },
     setApiId(state, payload) {
-      state.apiId = state.apis[payload] ? payload : "ubiq";
+      state.apiId = state.apis[payload] ? payload : "chain";
     },
     setClientVer(state, payload) {
       state.clientVer = payload;
