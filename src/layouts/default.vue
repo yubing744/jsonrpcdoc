@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar :clipped-left="true" :clipped-right="false" fixed app>
       <img
-        :src="require('../assets/octano.svg')"
+        :src="require('../assets/apis/stc.svg')"
         height="48px"
         style="height:48px;"
         class="mr-2"
@@ -75,7 +75,8 @@
                 apiId === "custom" && !editMode
                   ? "Select an API..."
                   : selectedApi.info.title
-              }}
+              }} 
+    
             </span>
             <v-spacer />
             <v-icon small>mdi-chevron-down</v-icon>
@@ -208,7 +209,7 @@ export default {
     }
   },
   data: () => ({
-    title: "octano-d0x"
+    title: "Starcoin JSON RPC API Documents"
   })
 };
 </script>

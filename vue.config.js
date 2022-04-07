@@ -13,5 +13,5 @@ module.exports = {
   },
   // gh-pages
   // https://cli.vuejs.org/guide/deployment.html#pwa
-  publicPath: process.env.NODE_ENV === "production" ? "/d0x/" : "/"
+  publicPath: process.env.NODE_ENV === "production" ? "/jsonrpcdoc/" : "/"
 };
