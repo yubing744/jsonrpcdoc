@@ -14,7 +14,7 @@ export function dereference(json_obj, callback) {
 async function inne_parse(parser, json_obj) {
     for (const [key, value] of Object.entries(json_obj)) {    
         if (key == "schema") {
-            var schema = await parser.dereference(value)
+            let schema = await parser.dereference(value)
             json_obj[key] = schema
         } else {
             if (Object.prototype.toString.call(value) === '[Object Object]') {
